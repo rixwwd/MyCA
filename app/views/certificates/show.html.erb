@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @certificate.country %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @certificate.organization %>
+</p>
+
+<p>
+  <strong>Organization unit:</strong>
+  <%= @certificate.organization_unit %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @certificate.common_name %>
+</p>
+
+<p>
+  <strong>Sate:</strong>
+  <%= @certificate.state %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @certificate.locality %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @certificate.serial %>
+</p>
+
+<p>
+  <strong>Not before:</strong>
+  <%= @certificate.not_before %>
+</p>
+
+<p>
+  <strong>Not after:</strong>
+  <%= @certificate.not_after %>
+</p>
+
+<p>
+  <strong>Signature algorithm:</strong>
+  <%= @certificate.signature_algorithm %>
+</p>
+
+<p>
+  <strong>Private key:</strong>
+  <%= @certificate.private_key %>
+</p>
+
+<p>
+  <strong>Public key:</strong>
+  <%= @certificate.public_key %>
+</p>
+
+<p>
+  <strong>Certificate:</strong>
+  <%= @certificate.certificate %>
+</p>
+
+<p>
+  <strong>Ca:</strong>
+  <%= @certificate.ca %>
+</p>
+
+<%= link_to 'Back', ca_certificates_path %>

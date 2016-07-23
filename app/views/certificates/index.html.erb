@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Certificates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Organization</th>
+      <th>Organization unit</th>
+      <th>Common name</th>
+      <th>Sate</th>
+      <th>Locality</th>
+      <th>Serial</th>
+      <th>Not before</th>
+      <th>Not after</th>
+      <th>Signature algorithm</th>
+      <th>Private key</th>
+      <th>Public key</th>
+      <th>Certificate</th>
+      <th>Ca</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @certificates.each do |certificate| %>
+      <tr>
+        <td><%= certificate.country %></td>
+        <td><%= certificate.organization %></td>
+        <td><%= certificate.organization_unit %></td>
+        <td><%= certificate.common_name %></td>
+        <td><%= certificate.state %></td>
+        <td><%= certificate.locality %></td>
+        <td><%= certificate.serial %></td>
+        <td><%= certificate.not_before %></td>
+        <td><%= certificate.not_after %></td>
+        <td><%= certificate.signature_algorithm %></td>
+        <td><%= certificate.private_key %></td>
+        <td><%= certificate.public_key %></td>
+        <td><%= certificate.certificate %></td>
+        <td><%= certificate.ca %></td>
+        <td><%= link_to 'Show', ca_certificate_url(@ca, certificate) %></td>
+        <td><%= link_to 'Destroy', ca_certificate_url(@ca, certificate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Certificate', new_ca_certificate_path %>

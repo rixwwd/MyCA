@@ -1,0 +1,82 @@
+<%= form_for(ca) do |f| %>
+  <% if ca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ca.errors.count, "error") %> prohibited this ca from being saved:</h2>
+
+      <ul>
+      <% ca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :organization %>
+    <%= f.text_field :organization %>
+  </div>
+
+  <div class="field">
+    <%= f.label :organization_unit %>
+    <%= f.text_field :organization_unit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :common_name %>
+    <%= f.text_field :common_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :locality %>
+    <%= f.text_field :locality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :serial %>
+    <%= f.number_field :serial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_before %>
+    <%= f.datetime_select :not_before %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_after %>
+    <%= f.datetime_select :not_after %>
+  </div>
+
+  <div class="field">
+    <%= f.label :signature_algorithm %>
+    <%= f.text_field :signature_algorithm %>
+  </div>
+
+  <div class="field">
+    <%= f.label :private_key %>
+    <%= f.text_area :private_key %>
+  </div>
+
+  <div class="field">
+    <%= f.label :public_key %>
+    <%= f.text_area :public_key %>
+  </div>
+
+  <div class="field">
+    <%= f.label :certificate %>
+    <%= f.text_area :certificate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

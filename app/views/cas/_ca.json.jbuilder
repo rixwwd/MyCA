@@ -1,0 +1,2 @@
+json.extract! ca, :id, :country, :organization, :organization_unit, :common_name, :state, :locality, :serial, :not_before, :not_after, :signature_algorithm, :private_key, :public_key, :certificate, :created_at, :updated_at
+json.url ca_url(ca, format: :json)

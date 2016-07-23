@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  organization: MyString
+  organization_unit: MyString
+  common_name: MyString
+  state: MyString
+  locality: MyString
+  serial: 1
+  not_before: 2016-07-23 01:30:31
+  not_after: 2016-07-23 01:30:31
+  signature_algorithm: MyString
+  private_key: MyText
+  publix_key: MyText
+  certicifate: MyText
+
+two:
+  country: MyString
+  organization: MyString
+  organization_unit: MyString
+  common_name: MyString
+  state: MyString
+  locality: MyString
+  serial: 1
+  not_before: 2016-07-23 01:30:31
+  not_after: 2016-07-23 01:30:31
+  signature_algorithm: MyString
+  private_key: MyText
+  publix_key: MyText
+  certicifate: MyText
