@@ -2,7 +2,7 @@
 
 one:
   country: MyString
-  ornanization: MyString
+  organization: MyString
   organization_unit: MyString
   common_name: MyString
   state: MyString
@@ -18,7 +18,7 @@ one:
 
 two:
   country: MyString
-  ornanization: MyString
+  organization: MyString
   organization_unit: MyString
   common_name: MyString
   state: MyString

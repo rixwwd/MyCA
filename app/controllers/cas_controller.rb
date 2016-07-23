@@ -1,5 +1,5 @@
 class CasController < ApplicationController
-  before_action :set_ca, only: [:show, :edit, :update, :destroy]
+  before_action :set_ca, only: [:show, :destroy]
 
   # GET /cas
   # GET /cas.json
@@ -15,10 +15,6 @@ class CasController < ApplicationController
   # GET /cas/new
   def new
     @ca = Ca.new
-  end
-
-  # GET /cas/1/edit
-  def edit
   end
 
   # POST /cas
@@ -40,20 +36,6 @@ class CasController < ApplicationController
         format.json { render :show, status: :created, location: @ca }
       else
         format.html { render :new }
-        format.json { render json: @ca.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /cas/1
-  # PATCH/PUT /cas/1.json
-  def update
-    respond_to do |format|
-      if @ca.update(ca_params)
-        format.html { redirect_to @ca, notice: 'Ca was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ca }
-      else
-        format.html { render :edit }
         format.json { render json: @ca.errors, status: :unprocessable_entity }
       end
     end

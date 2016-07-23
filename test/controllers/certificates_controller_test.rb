@@ -28,16 +28,6 @@ class CertificatesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_certificate_url(@certificate)
-    assert_response :success
-  end
-
-  test "should update certificate" do
-    patch certificate_url(@certificate), params: { certificate: { ca: @certificate.ca, certificate: @certificate.certificate, common_name: @certificate.common_name, country: @certificate.country, locality: @certificate.locality, not_after: @certificate.not_after, not_before: @certificate.not_before, organization_unit: @certificate.organization_unit, ornanization: @certificate.ornanization, private_key: @certificate.private_key, public_key: @certificate.public_key, state: @certificate.state, serial: @certificate.serial, signature_algorithm: @certificate.signature_algorithm } }
-    assert_redirected_to certificate_url(@certificate)
-  end
-
   test "should destroy certificate" do
     assert_difference('Certificate.count', -1) do
       delete certificate_url(@certificate)
