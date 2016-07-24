@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  country: MyString
+  country: JP
   organization: MyString
   organization_unit: MyString
   common_name: MyString
@@ -10,11 +10,55 @@ one:
   serial: 1
   not_before: 2016-07-23 01:30:31
   not_after: 2016-07-23 01:30:31
-  private_key: MyText
-  certicifate: MyText
+  private_key: |+
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpQIBAAKCAQEAtpTXICJzIF41CwNIMhFds0SrxtcL7zYLKL8VuXaOqPGH8O3r
+    8buevj95Btmf7DAIi1cXqMSlg9eXE0WBKRIlf08cSQcCjXqdr1KOS4bZgCNuAWpv
+    AE1QaEc13+7Vu0qZuH//H1E55PwIymPH7m3ouISWs9h+nMy6sBF8IKoR+DePBg8m
+    zJrSy+LpKOPUH3KYHqTcSJP+FvAjm0JYpeA1ubG/f4zey6R/UJOmA1ZsSo/1tCn2
+    uKH7uUjxLgPbwa0W5sBPvelEipi0X7b0RIcWyrEEPgxoDnD3UiFbC5CRVl+2SHhm
+    WNTSre9ms1cB09ah6x/iczhmC3to/nc/bj2heQIDAQABAoIBAQCNRYtS9PTphZs7
+    QzXYb7F1pVvYhcpZNBLcW0Ye88oclI5f8GgQ6eBBSnGFyFvCb8QctK28yzNaWTUv
+    FyeCNOVIpVi4dLEX8VkTMCij7dpbGI7kj4sFy8y8cuUPuQgtW+KnbHplq/7E2/Kd
+    TymCpg5cv1KwI4KMJqkI1O6bg5xV1rA9gV630kNdCU6Wtsk3ye9DGZKB/VqFWEsw
+    85SI7h4UC/hW+gc2y7f5KPEAsHE7nYMpb8TcKBlvCavdD7EUoMHDbOWIn5w3gUqd
+    o46/b1xbd/F20qY8McXB7lGq7ljmga6nQfRo0JjQWQZ+rfeGxDNKzXmWGSsQukHn
+    r1LW3UR1AoGBAOS6lrqbaTEUeIJRjYtNU77bhGp6rYhbJol2jbIdmzAB08BZgOOJ
+    I30PHXtIG/6t7lGbo2gpwbonF0EhwCIRLyctehxCmfyMiz9LerWrwulPfyWxFAFz
+    dzYA4Jdzf5QQmht24pkbZ4+XUKlq5f9jNLmQjwOZVgr6UKeNaF8qqECDAoGBAMxZ
+    tXodXmzja1UgTMS/D91fFzpmcZyeMdQ2y5fVc5a/i6pKRG6Ptveo4kH3TVcFGC8V
+    fKAJPVnX2LW72HdOZFldrCdtsYJOWFMfrytxbv8wKexo5M6/+GhPcLIZmTYnXMN4
+    BKgN85T/yChJHE0Y5b93dtV5Kv3RfqrLdC9YsL1TAoGBAKftpgRTXaO/F8r1/Smt
+    GDMkD8/tScK2yVBbTiTbP7i7Xq/2Bn8HjJqgolCE3KjbIgGgdxRes/DsClKzaNCa
+    NThaVzCwZUXaGdHapLkE5hFNYFhX7gwyre9kLYCEN8KJfdt0KWGnkR0HRx1bcolS
+    WL90tss5pMZiiRy64Uodk3HpAoGAWWSA88t3LBEMOe/oRUUDbqaTZbO8zXOSfq/9
+    vgzdBLwEH9lfODJcKtjRKWRCi+epnac7nlKMaQn4Pf/PgNllIobMsW7V8RfOoYZB
+    vbJgiPeLz2RPe3YU96SQuwhhsoPjm4qcFtwLi0mdSKo63CshDfH3pQjdWq1TSOm5
+    iKC2qAsCgYEAlx9Wn77zCv8DkCEe7aPP+Qp7EjsUW3ZNMNKAAfYErmSlwPsXnIqJ
+    FMZRRbfxHRcvdR3JOu2I8a27Jk27RxcDZ8TLowW5jbp3dBlB7wr+kPR372bEefL0
+    +H6kMo+GU+Ao6yY173moJ0ovO1mL+Wm5mgjz0xJVVSFlN5/7lYXyRNw=
+    -----END RSA PRIVATE KEY-----
+  certificate: |+
+    -----BEGIN CERTIFICATE-----
+    MIICsjCCAZoCAQEwDQYJKoZIhvcNAQELBQAwHzELMAkGA1UEBhMCSlAxEDAOBgNV
+    BAMMB1RFU1QgQ0EwHhcNMTYwNzI0MTEwNzAwWhcNMjAxMjMxMjM1OTAwWjAfMQsw
+    CQYDVQQGEwJKUDEQMA4GA1UEAwwHVEVTVCBDQTCCASIwDQYJKoZIhvcNAQEBBQAD
+    ggEPADCCAQoCggEBALaU1yAicyBeNQsDSDIRXbNEq8bXC+82Cyi/Fbl2jqjxh/Dt
+    6/G7nr4/eQbZn+wwCItXF6jEpYPXlxNFgSkSJX9PHEkHAo16na9SjkuG2YAjbgFq
+    bwBNUGhHNd/u1btKmbh//x9ROeT8CMpjx+5t6LiElrPYfpzMurARfCCqEfg3jwYP
+    Jsya0svi6Sjj1B9ymB6k3EiT/hbwI5tCWKXgNbmxv3+M3sukf1CTpgNWbEqP9bQp
+    9rih+7lI8S4D28GtFubAT73pRIqYtF+29ESHFsqxBD4MaA5w91IhWwuQkVZftkh4
+    ZljU0q3vZrNXAdPWoesf4nM4Zgt7aP53P249oXkCAwEAATANBgkqhkiG9w0BAQsF
+    AAOCAQEAG4ZCFTRwx1qRjuOCa+r64sawnLYU1pXf58wm9iLbQ0KMBxpEKa5nGXHk
+    t8MsQXm7xaMHZDHt8DfB3tWR7Q4mcIOGS0fBCaiVAqmGSHkwMYkQ9Sm9Mqzn4Nvm
+    htWA6XooSBiXIYQelxf2ZT16PTqNzg476MdY7tv26gA05DR/Mh717w3VPSuTao8n
+    wdC7CFmt7GMVI1RdehYH/0qO+YPktr2DFO47XetVRjYaJZqZQm6l9smQKiFpNYwy
+    a89eFvWDaGin70FMJ2efkAnPbHPloxDucQkrWT5CGBCvDOOhuT+sjkpp2q1tPGxf
+    yNQhrpqGlTcsoyArLxWn/+XWxVj89Q==
+    -----END CERTIFICATE-----
 
 two:
-  country: MyString
+  country: JP
   organization: MyString
   organization_unit: MyString
   common_name: MyString
@@ -24,4 +68,4 @@ two:
   not_before: 2016-07-23 01:30:31
   not_after: 2016-07-23 01:30:31
   private_key: MyText
-  certicifate: MyText
+  certificate: MyText
