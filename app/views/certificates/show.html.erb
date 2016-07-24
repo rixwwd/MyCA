@@ -51,8 +51,8 @@
 </p>
 
 <p>
-  <strong>Ca:</strong>
-  <%= @certificate.ca %>
+  <strong>Certificate Authority:</strong>
+  <%= @certificate.ca.common_name %>
 </p>
 
 <%= link_to 'Back', ca_certificates_path %>
