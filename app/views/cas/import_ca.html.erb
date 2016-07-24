@@ -1,0 +1,20 @@
+<h1>Import Certificate Authority</h1>
+
+<%= form_tag import_cas_path do %>
+
+  <div class="field">
+    <%= label_tag :certificate %>
+    <%= text_area_tag :certificate %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :private_key %>
+    <%= text_area_tag :private_key %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Import' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', cas_path %>

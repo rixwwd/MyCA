@@ -36,6 +36,22 @@ class CasController < ApplicationController
     end
   end
 
+  # GET /cas/import_ca
+  def import_ca
+  end
+
+  # POST /cas/import
+  def import
+    @ca = Ca.new()
+    @ca.import(params[:certificate], params[:private_key])
+    if @ca.save
+      redirect_to @ca, notice: 'Ca was successfully imported.'
+    else
+      render :import_ca
+    end
+  end
+
+
   # DELETE /cas/1
   # DELETE /cas/1.json
   def destroy

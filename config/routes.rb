@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :cas, only:[:index, :new, :create, :show, :destroy] do
+    get 'import_ca', on: :collection
+    post 'import', on: :collection
     resources :certificates, only: [:index, :new, :create, :show, :destroy] do
       get 'upload_csr', on: :collection
       post 'csr', on: :collection

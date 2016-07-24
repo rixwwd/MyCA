@@ -50,6 +50,28 @@ class Ca < ApplicationRecord
     cert
   end
 
+  def import(cert, private_key)
+
+    x509cert = OpenSSL::X509::Certificate.new(cert)
+    key_pair = OpenSSL::PKey::RSA.new(private_key)
+
+    dn_map = x509cert.subject.to_a.map{|x| [x[0], x[1]]}.to_h
+    self.country = dn_map["C"]
+    self.organization = dn_map["O"]
+    self.organization_unit = dn_map["OU"]
+    self.common_name = dn_map["CN"]
+    self.state = dn_map["ST"]
+    self.locality = dn_map["L"]
+
+    self.private_key = key_pair
+
+    self.not_before = x509cert.not_before.to_datetime
+    self.not_after = x509cert.not_after.to_datetime
+
+    self.serial = 2
+    self.certificate = x509cert.to_pem
+  end
+
 private
   def subject
     subject = OpenSSL::X509::Name.new()
