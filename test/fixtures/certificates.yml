@@ -12,7 +12,7 @@ one:
   not_after: 2016-07-23 22:11:22
   private_key: MyText
   certificate: MyText
-  ca: 1
+  ca: one
 
 two:
   country: US
@@ -26,4 +26,4 @@ two:
   not_after: 2016-07-23 22:11:22
   private_key: MyText
   certificate: MyText
-  ca: 1
+  ca: one
