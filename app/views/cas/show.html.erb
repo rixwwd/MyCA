@@ -47,7 +47,12 @@
 
 <p>
   <strong>Certificate:</strong>
-  <%= simple_format(@ca.certificate) %>
+  <pre><%= @ca.certificate %></pre>
+</p>
+
+<p>
+  <strong>Private Key:</strong>
+  <pre><%= @ca.private_key %></pre>
 </p>
 
 <%= link_to 'Back', cas_path %>

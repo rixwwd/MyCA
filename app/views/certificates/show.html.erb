@@ -47,8 +47,15 @@
 
 <p>
   <strong>Certificate:</strong>
-  <%= simple_format(@certificate.certificate) %>
+  <pre><%= @certificate.certificate %></pre>
 </p>
+
+<% if @certificate.private_key.present? %>
+<p>
+  <strong>Private Key:</strong>
+  <pre><%= @certificate.private_key %></pre>
+</p>
+<% end %>
 
 <p>
   <strong>Certificate Authority:</strong>
