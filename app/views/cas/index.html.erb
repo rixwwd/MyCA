@@ -14,10 +14,6 @@
       <th>Serial</th>
       <th>Not before</th>
       <th>Not after</th>
-      <th>Signature algorithm</th>
-      <th>Private key</th>
-      <th>Public key</th>
-      <th>Certificate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,12 +30,9 @@
         <td><%= ca.serial %></td>
         <td><%= ca.not_before %></td>
         <td><%= ca.not_after %></td>
-        <td><%= ca.signature_algorithm %></td>
-        <td><%= ca.private_key %></td>
-        <td><%= ca.public_key %></td>
-        <td><%= ca.certificate %></td>
         <td><%= link_to 'Show', ca %></td>
         <td><%= link_to 'Destroy', ca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Certificates', ca_certificates_path(ca) %></td>
       </tr>
     <% end %>
   </tbody>

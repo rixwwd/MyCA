@@ -42,18 +42,23 @@ class CertificatesController < ApplicationController
 
   # GET /certificates/upload_csr
   def upload_csr
+    @csr_upload = CsrUpload.new
   end
 
   # POST /certificates/csr
   def csr
+    @csr_upload = CsrUpload.new(csr_upload_params)
     @certificate = @ca.certificates.build()
-    csr = OpenSSL::X509::Request.new(params[:csr])
+    @certificate.not_before = @csr_upload.not_before
+    @certificate.not_after = @csr_upload.not_after
+
+    csr = OpenSSL::X509::Request.new(@csr_upload.csr)
     @certificate.create_certificate(csr)
     @certificate.set_param_from_csr(csr)
+
     if @certificate.save
       redirect_to [@ca, @certificate], notice: 'Certificate was successfully created.'
     else
-      byebug
       render :upload_csr
     end
   end
@@ -81,7 +86,11 @@ class CertificatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificate_params
-      params.require(:certificate).permit(:country, :organization, :organization_unit, :common_name, :state, :locality, :serial, :not_before, :not_after, :signature_algorithm)
+      params.require(:certificate).permit(:country, :organization, :organization_unit, :common_name, :state, :locality, :not_before, :not_after)
+    end
+
+    def csr_upload_params
+      params.require(:csr_upload).permit(:csr, :not_before, :not_after)
     end
 
 end

@@ -46,23 +46,8 @@
 </p>
 
 <p>
-  <strong>Signature algorithm:</strong>
-  <%= @ca.signature_algorithm %>
-</p>
-
-<p>
-  <strong>Private key:</strong>
-  <%= @ca.private_key %>
-</p>
-
-<p>
-  <strong>Public key:</strong>
-  <%= @ca.public_key %>
-</p>
-
-<p>
   <strong>Certificate:</strong>
-  <%= @ca.certificate %>
+  <%= simple_format(@ca.certificate) %>
 </p>
 
 <%= link_to 'Back', cas_path %>

@@ -17,7 +17,8 @@ class CertificatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create certificate" do
     assert_difference('Certificate.count') do
-      post certificates_url, params: { certificate: { ca: @certificate.ca, certificate: @certificate.certificate, common_name: @certificate.common_name, country: @certificate.country, locality: @certificate.locality, not_after: @certificate.not_after, not_before: @certificate.not_before, organization_unit: @certificate.organization_unit, ornanization: @certificate.ornanization, private_key: @certificate.private_key, public_key: @certificate.public_key, state: @certificate.state, serial: @certificate.serial, signature_algorithm: @certificate.signature_algorithm } }
+      post certificates_url, params: { certificate: { ca: @certificate.ca, common_name: @certificate.common_name, country: @certificate.country, locality: @certificate.locality, not_after: @certificate.not_after, not_before: @certificate.not_before, organization_unit: @certificate.organization_unit, ornanization: @certificate.ornanization, state: @certificate.state
+         } }
     end
 
     assert_redirected_to certificate_url(Certificate.last)

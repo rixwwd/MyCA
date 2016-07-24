@@ -46,23 +46,8 @@
 </p>
 
 <p>
-  <strong>Signature algorithm:</strong>
-  <%= @certificate.signature_algorithm %>
-</p>
-
-<p>
-  <strong>Private key:</strong>
-  <%= @certificate.private_key %>
-</p>
-
-<p>
-  <strong>Public key:</strong>
-  <%= @certificate.public_key %>
-</p>
-
-<p>
   <strong>Certificate:</strong>
-  <%= @certificate.certificate %>
+  <%= simple_format(@certificate.certificate) %>
 </p>
 
 <p>

@@ -22,13 +22,8 @@ class CasController < ApplicationController
   def create
     @ca = Ca.new(ca_params)
 
-    if @ca.private_key.empty? || @ca.public_key.empty?
-      @ca.generate_key_pair
-    end
-
-    if @ca.certificate.empty?
-      @ca.generate_certificate
-    end
+    @ca.generate_key_pair
+    @ca.generate_certificate
 
     respond_to do |format|
       if @ca.save
@@ -59,6 +54,6 @@ class CasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ca_params
-      params.require(:ca).permit(:country, :organization, :organization_unit, :common_name, :state, :locality, :serial, :not_before, :not_after, :signature_algorithm, :private_key, :public_key, :certificate)
+      params.require(:ca).permit(:country, :organization, :organization_unit, :common_name, :state, :locality, :not_before, :not_after)
     end
 end

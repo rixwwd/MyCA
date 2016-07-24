@@ -17,7 +17,7 @@ class CasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ca" do
     assert_difference('Ca.count') do
-      post cas_url, params: { ca: { certicifate: @ca.certicifate, common_name: @ca.common_name, country: @ca.country, locality: @ca.locality, not_after: @ca.not_after, not_before: @ca.not_before, organization: @ca.organization, organization_unit: @ca.organization_unit, private_key: @ca.private_key, publix_key: @ca.publix_key, serial: @ca.serial, signature_algorithm: @ca.signature_algorithm, state: @ca.state } }
+      post cas_url, params: { ca: { common_name: @ca.common_name, country: @ca.country, locality: @ca.locality, not_after: @ca.not_after, not_before: @ca.not_before, organization: @ca.organization, organization_unit: @ca.organization_unit, state: @ca.state } }
     end
 
     assert_redirected_to ca_url(Ca.last)

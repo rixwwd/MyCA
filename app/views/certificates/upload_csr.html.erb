@@ -1,13 +1,25 @@
 <h1>Upload CSR</h1>
 
-<%= form_tag csr_ca_certificates_path do %>
+<%= form_for @csr_upload, url: csr_ca_certificates_path(@ca)  do |f| %>
 
   <div class="field">
-    <%= label_tag :csr, 'CSR' %>
-    <%= text_area_tag :csr %>
+    <%= f.label :csr %>
+    <%= f.text_area :csr %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_before %>
+    <%= f.datetime_select :not_before %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_after %>
+    <%= f.datetime_select :not_after %>
   </div>
 
   <div class="actions">
-    <%= submit_tag 'Upload' %>
+    <%= f.submit 'Upload' %>
   </div>
 <% end %>
+
+<%= link_to 'Back', ca_certificates_path %>

@@ -42,11 +42,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :serial %>
-    <%= f.number_field :serial %>
-  </div>
-
-  <div class="field">
     <%= f.label :not_before %>
     <%= f.datetime_select :not_before %>
   </div>
@@ -54,26 +49,6 @@
   <div class="field">
     <%= f.label :not_after %>
     <%= f.datetime_select :not_after %>
-  </div>
-
-  <div class="field">
-    <%= f.label :signature_algorithm %>
-    <%= f.text_field :signature_algorithm %>
-  </div>
-
-  <div class="field">
-    <%= f.label :private_key %>
-    <%= f.text_area :private_key %>
-  </div>
-
-  <div class="field">
-    <%= f.label :public_key %>
-    <%= f.text_area :public_key %>
-  </div>
-
-  <div class="field">
-    <%= f.label :certificate %>
-    <%= f.text_area :certificate %>
   </div>
 
   <div class="actions">

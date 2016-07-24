@@ -10,9 +10,7 @@ one:
   serial: 1
   not_before: 2016-07-23 22:11:22
   not_after: 2016-07-23 22:11:22
-  signature_algorithm: MyString
   private_key: MyText
-  public_key: MyText
   certificate: MyText
   ca: 1
 
@@ -26,8 +24,6 @@ two:
   serial: 1
   not_before: 2016-07-23 22:11:22
   not_after: 2016-07-23 22:11:22
-  signature_algorithm: MyString
   private_key: MyText
-  public_key: MyText
   certificate: MyText
   ca: 1

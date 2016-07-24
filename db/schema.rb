@@ -13,40 +13,36 @@
 ActiveRecord::Schema.define(version: 20160723131122) do
 
   create_table "cas", force: :cascade do |t|
-    t.string   "country",             null: false
-    t.string   "organization",        null: false
-    t.string   "organization_unit",   null: false
-    t.string   "common_name",         null: false
-    t.string   "state",               null: false
-    t.string   "locality",            null: false
-    t.integer  "serial",              null: false
-    t.datetime "not_before",          null: false
-    t.datetime "not_after",           null: false
-    t.string   "signature_algorithm", null: false
-    t.text     "private_key",         null: false
-    t.text     "public_key",          null: false
-    t.text     "certificate",         null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "country",           null: false
+    t.string   "organization"
+    t.string   "organization_unit"
+    t.string   "common_name",       null: false
+    t.string   "state"
+    t.string   "locality"
+    t.integer  "serial",            null: false
+    t.datetime "not_before",        null: false
+    t.datetime "not_after",         null: false
+    t.text     "private_key",       null: false
+    t.text     "certificate",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "certificates", force: :cascade do |t|
-    t.string   "country",             null: false
-    t.string   "organization",        null: false
-    t.string   "organization_unit",   null: false
-    t.string   "common_name",         null: false
-    t.string   "state",               null: false
-    t.string   "locality",            null: false
-    t.integer  "serial",              null: false
-    t.datetime "not_before",          null: false
-    t.datetime "not_after",           null: false
-    t.string   "signature_algorithm", null: false
-    t.text     "private_key",         null: false
-    t.text     "public_key",          null: false
-    t.text     "certificate",         null: false
-    t.integer  "ca_id",               null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "country",           null: false
+    t.string   "organization"
+    t.string   "organization_unit"
+    t.string   "common_name",       null: false
+    t.string   "state"
+    t.string   "locality"
+    t.integer  "serial",            null: false
+    t.datetime "not_before",        null: false
+    t.datetime "not_after",         null: false
+    t.text     "private_key"
+    t.text     "certificate",       null: false
+    t.integer  "ca_id",             null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end
