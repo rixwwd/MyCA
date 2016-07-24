@@ -1,3 +1,5 @@
+require 'openssl'
+
 class CertificatesController < ApplicationController
   before_action :set_ca
   before_action :set_certificate, only: [:show, :destroy]
@@ -24,7 +26,8 @@ class CertificatesController < ApplicationController
     @certificate = @ca.certificates.build(certificate_params)
 
     @certificate.generate_key_pair
-    @certificate.generate_certificate
+    csr = @certificate.generate_csr
+    @certificate.create_certificate(csr)
 
     respond_to do |format|
       if @certificate.save
@@ -34,6 +37,24 @@ class CertificatesController < ApplicationController
         format.html { render :new }
         format.json { render json: @certificate.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # GET /certificates/upload_csr
+  def upload_csr
+  end
+
+  # POST /certificates/csr
+  def csr
+    @certificate = @ca.certificates.build()
+    csr = OpenSSL::X509::Request.new(params[:csr])
+    @certificate.create_certificate(csr)
+    @certificate.set_param_from_csr(csr)
+    if @certificate.save
+      redirect_to [@ca, @certificate], notice: 'Certificate was successfully created.'
+    else
+      byebug
+      render :upload_csr
     end
   end
 
@@ -62,4 +83,5 @@ class CertificatesController < ApplicationController
     def certificate_params
       params.require(:certificate).permit(:country, :organization, :organization_unit, :common_name, :state, :locality, :serial, :not_before, :not_after, :signature_algorithm)
     end
+
 end

@@ -1,0 +1,13 @@
+<h1>Upload CSR</h1>
+
+<%= form_tag csr_ca_certificates_path do %>
+
+  <div class="field">
+    <%= label_tag :csr, 'CSR' %>
+    <%= text_area_tag :csr %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Upload' %>
+  </div>
+<% end %>
