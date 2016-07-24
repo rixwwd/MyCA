@@ -2,7 +2,7 @@ require 'openssl'
 
 class Ca < ApplicationRecord
 
-  has_many :certificates
+  has_many :certificates, dependent: :delete_all
 
   validates :country, length:{is:2}
   validates :organization, length:{maximum: 64}, allow_blank: true
